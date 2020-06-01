@@ -3,7 +3,7 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get upgrade -yq
-RUN apt-get install gnupg2 -yq
+RUN apt-get install gnupg2 wget -yq
 RUN echo "deb http://packages.azlux.fr/debian/ buster main" | tee /etc/apt/sources.list.d/azlux.list
 RUN wget -qO - https://azlux.fr/repo.gpg.key | apt-key add -
 RUN apt-get update && apt-get upgrade -yq
