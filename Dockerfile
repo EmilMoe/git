@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV WHD_SCRIPTS=/scripts
-ENV WHD_TLS_LISTEN_ADDR=:443
+ENV WHD_TLS_LISTEN_ADDR=:80
 
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install gnupg2 wget -yq
