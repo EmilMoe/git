@@ -18,4 +18,4 @@ COPY github.sh /scripts/github.sh
 
 WORKDIR /var/www/html
 
-ENTRYPOINT ["webhookd -scripts=/scripts --listen-addr=443"]
+ENTRYPOINT ["webhookd -scripts=/scripts -listen-addr=443"]
