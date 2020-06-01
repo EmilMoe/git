@@ -16,7 +16,7 @@ RUN ssh-keyscan gitlab.com >> /ssh/known_hosts
 RUN mkdir -p /var/www/html
 RUN mkdir -p /scripts
 
-EXPOSE 80 443
+EXPOSE 80/tcp 443/tcp
 
 COPY github.sh /scripts/github.sh
 
