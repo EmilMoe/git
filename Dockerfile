@@ -13,7 +13,7 @@ RUN { \
         echo "#!/usr/bin/env bash"; \
         echo "set -e"; \
         echo "git pull --ff -r"; \
-        echo "webhookd"; \
+        webhookd; \
     } > /usr/local/bin/entrypoint \
     && chmod a+rx /usr/local/bin/entrypoint \
     && apt-get -yq clean autoclean && apt-get -yq autoremove \
