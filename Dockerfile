@@ -8,6 +8,7 @@ RUN echo "deb http://packages.azlux.fr/debian/ buster main" | tee /etc/apt/sourc
 RUN wget -qO - https://azlux.fr/repo.gpg.key | apt-key add -
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install git webhookd jq -yq
+RUN mkdir -p /root/.ssh/
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 RUN ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
 RUN mkdir -p /var/www/html
