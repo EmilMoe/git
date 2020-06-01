@@ -2,8 +2,8 @@ FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN echo "deb http://packages.azlux.fr/debian/ buster main" | sudo tee /etc/apt/sources.list.d/azlux.list
-RUN wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
+RUN echo "deb http://packages.azlux.fr/debian/ buster main" | tee /etc/apt/sources.list.d/azlux.list
+RUN wget -qO - https://azlux.fr/repo.gpg.key | apt-key add -
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install git webhookd jq -yq
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
