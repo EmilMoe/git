@@ -17,7 +17,6 @@ RUN mkdir -p /scripts
 RUN { \
         echo "#!/usr/bin/env bash"; \
         echo "set -e"; \
-        echo "git pull --ff -r"; \
         echo "webhookd -scripts=/scripts"; \
     } > /usr/local/bin/entrypoint \
     && chmod a+rx /usr/local/bin/entrypoint \
