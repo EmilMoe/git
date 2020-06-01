@@ -1,7 +1,6 @@
 FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV WHD_SCRIPTS=/scripts
 
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install gnupg2 wget -yq
@@ -19,4 +18,4 @@ COPY github.sh /scripts/github.sh
 
 WORKDIR /var/www/html
 
-ENTRYPOINT ["webhookd"]
+ENTRYPOINT ["webhookd -scripts=/scripts --listen-addr=443"]
