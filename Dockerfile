@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV WHD_SCRIPTS=/scripts
-ENV WHD_TLS_LISTEN_ADDR=:80
+ENV WHD_TLS_LISTEN_ADDR=:443
 
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install gnupg2 wget -yq
@@ -15,6 +15,8 @@ RUN ssh-keyscan github.com >> /ssh/known_hosts
 RUN ssh-keyscan gitlab.com >> /ssh/known_hosts
 RUN mkdir -p /var/www/html
 RUN mkdir -p /scripts
+
+EXPOSE 80 443
 
 COPY github.sh /scripts/github.sh
 
