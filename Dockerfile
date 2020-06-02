@@ -26,7 +26,7 @@ RUN { \
     && apt-get -yq clean autoclean && apt-get -yq autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 80/tcp 443/tcp
+EXPOSE 80/tcp
 
 COPY github.sh /scripts/github.sh
 RUN chmod -R +x /scripts/*
