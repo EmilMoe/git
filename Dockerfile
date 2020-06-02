@@ -16,7 +16,7 @@ RUN mkdir -p /scripts
 RUN { \
         echo "#!/usr/bin/env bash"; \
         echo "set -e"; \
-        echo "if [ -f \"/root/.ssh/known_hosts\" ]; then"; \
+        echo "if [ ! -f \"/root/.ssh/known_hosts\" ]; then"; \
         echo "ssh-keyscan github.com >> /root/.ssh/known_hosts"; \
         echo "ssh-keyscan gitlab.com >> /root/.ssh/known_hosts"; \
         echo "fi"; \
