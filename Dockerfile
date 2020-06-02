@@ -32,6 +32,7 @@ RUN { \
 EXPOSE 80/tcp
 
 COPY github.sh /scripts/github.sh
+
 RUN chmod -R +x /scripts/*
 
 WORKDIR /var/www/html
