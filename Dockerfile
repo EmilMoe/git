@@ -32,6 +32,7 @@ RUN { \
 EXPOSE 80/tcp
 
 COPY github.sh /scripts/github.sh
+COPY gitlab.sh /scripts/gitlab.sh
 
 RUN chmod -R +x /scripts/*
 
