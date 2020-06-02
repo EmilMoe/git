@@ -3,6 +3,7 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 ENV WHD_SCRIPTS=/scripts
 ENV WHD_LISTEN_ADDR=:80
+ENV WHD_DEBUG=true
 
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install gnupg2 wget -yq
