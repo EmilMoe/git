@@ -8,10 +8,10 @@ debug() {
 }
 
 # Validate global configuration
-[ -z "$GIT_SECRET" ] && confDie "GITLAB_TOKEN not set."
+[ -z "$GITLAB_TOKEN" ] && confDie "GITLAB_TOKEN not set."
 
 # Validate Gitlab hook
-[ "$x_gitlab_token" != "$GIT_SECRET" ] && die "bad hook token"
+[ "$x_gitlab_token" != "$GITLAB_TOKEN" ] && die "bad hook token"
 
 # Validate parameters
 payload=$1
