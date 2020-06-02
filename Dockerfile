@@ -16,6 +16,9 @@ RUN mkdir -p /scripts
 RUN { \
         echo "#!/usr/bin/env bash"; \
         echo "set -e"; \
+        echo "if [ ! -f \"/root/.ssh/id_rsa\" ]; then"; \
+        echo "ssh-keygen -q -t rsa -N '' -f /root/.ssh/id_rsa"; \
+        echo "fi"; \
         echo "if [ ! -f \"/root/.ssh/known_hosts\" ]; then"; \
         echo "ssh-keyscan github.com >> /root/.ssh/known_hosts"; \
         echo "ssh-keyscan gitlab.com >> /root/.ssh/known_hosts"; \
