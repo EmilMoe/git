@@ -19,6 +19,7 @@ RUN mkdir -p /scripts
 EXPOSE 80/tcp 443/tcp
 
 COPY github.sh /scripts/github.sh
+RUN chmod -R +x /scripts/*
 
 WORKDIR /var/www/html
 
