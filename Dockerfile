@@ -11,8 +11,6 @@ RUN wget -qO - https://azlux.fr/repo.gpg.key | apt-key add -
 RUN apt-get update && apt-get upgrade -yq
 RUN apt-get install git webhookd jq openssh-client -yq
 RUN mkdir -p /root/.ssh
-#RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-#RUN ssh-keyscan gitlab.com >> /root/.ssh/known_hosts
 RUN mkdir -p /var/www/html
 RUN mkdir -p /scripts
 RUN { \
