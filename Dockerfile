@@ -5,10 +5,6 @@ ENV WHD_SCRIPTS=/scripts
 ENV WHD_LISTEN_ADDR=:80
 
 RUN apt-get update && apt-get upgrade -yq
-
-RUN groupadd -g www-data
-RUN useradd -m -g www-data doagent
-
 RUN apt-get install gnupg2 wget -yq
 RUN echo "deb http://packages.azlux.fr/debian/ buster main" | tee /etc/apt/sources.list.d/azlux.list
 RUN wget -qO - https://azlux.fr/repo.gpg.key | apt-key add -
@@ -21,8 +17,6 @@ RUN mkdir -p /var/www/html
 RUN mkdir -p /scripts
 
 EXPOSE 80/tcp 443/tcp
-
-USER doagent
 
 COPY github.sh /scripts/github.sh
 RUN chmod -R +x /scripts/*
