@@ -1,5 +1,7 @@
 #!/bin/sh
 
+GITLAB_TOKEN=
+
 # Functions
 die() { echo "error: $@" 1>&2 ; exit 1; }
 confDie() { 
