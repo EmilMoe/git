@@ -33,6 +33,7 @@ object_kind=$(echo "$payload" | jq .object_kind -r)
 if [ "$object_kind" = "push" ]
 then
   git pull --ff
+  composer install --no-dev --no-interaction
   php artisan migrate --force
   php artisan db:seed --force
 fi
