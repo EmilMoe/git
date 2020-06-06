@@ -35,6 +35,8 @@ object_kind=$(echo "$payload" | jq .object_kind -r)
 if [ "$object_kind" = "push" ]
 then
   cd /var/www/html
+  git stash push --include-untracked
+  git stash drop
   git pull --ff
   composer install --no-dev --no-interaction
   php artisan migrate --force
