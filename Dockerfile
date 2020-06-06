@@ -29,7 +29,7 @@ RUN { \
     && apt-get -yq clean autoclean && apt-get -yq autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 80/tcp
+EXPOSE 80/tcp 443/tcp
 
 COPY github.sh /scripts/github.sh
 COPY gitlab.sh /scripts/gitlab.sh
