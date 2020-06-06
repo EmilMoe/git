@@ -28,6 +28,7 @@ debug "received payload: $payload"
 if [ "$x_github_event" = "push" ]
 then
   git pull -ff
+  composer install --no-dev --no-interaction
   php artisan migrate --force
   php artisan db:seed --force
 fi
