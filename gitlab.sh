@@ -34,6 +34,7 @@ object_kind=$(echo "$payload" | jq .object_kind -r)
 # Here create a simple notification when a push has occured
 if [ "$object_kind" = "push" ]
 then
+  cd /var/www/html
   git pull --ff
   composer install --no-dev --no-interaction
   php artisan migrate --force
