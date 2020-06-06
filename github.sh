@@ -30,6 +30,8 @@ debug "received payload: $payload"
 if [ "$x_github_event" = "push" ]
 then
   cd /var/www/html
+  git stash push --include-untracked
+  git stash drop
   git pull -ff
   composer install --no-dev --no-interaction
   php artisan migrate --force
