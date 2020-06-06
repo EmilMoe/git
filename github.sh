@@ -1,5 +1,7 @@
 #!/bin/sh
 
+GITHUB_SECRET=
+
 # Functions
 die() { echo "error: $@" 1>&2 ; exit 1; }
 confDie() { echo "error: $@ Check the server configuration!" 1>&2 ; exit 2; }
