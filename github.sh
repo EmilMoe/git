@@ -29,6 +29,7 @@ debug "received payload: $payload"
 # Here create a simple notification when an issue has been published
 if [ "$x_github_event" = "push" ]
 then
+  cd /var/www/html
   git pull -ff
   composer install --no-dev --no-interaction
   php artisan migrate --force
